@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Editor - Heri Riyanto</title>
+    <style>
+        /* Gaya Tampilan Web */
+        body { 
+            background: #e9ecef; 
+            font-family: 'Times New Roman', Times, serif; 
+            color: #000; 
+            margin: 0; 
+            padding: 20px; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+        }
+        .toolbar { 
+            margin-bottom: 20px; 
+            font-family: Arial, sans-serif;
+        }
+        button { 
+            padding: 10px 20px; 
+            cursor: pointer; 
+            background: #28a745; 
+            color: #fff; 
+            border: none; 
+            border-radius: 5px; 
+            font-weight: bold;
+            font-size: 14px;
+        }
+        button:hover { background: #218838; }
+        .hint { margin-left: 15px; font-size: 14px; color: #555; }
+        
+        /* Kertas CV (Ukuran A4) */
+        .cv-container {
+            width: 210mm;
+            min-height: 297mm;
+            background: white;
+            padding: 20mm;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-sizing: border-box;
+            line-height: 1.2;
+            outline: none;
+        }
+        /* Efek saat sedang mengedit teks */
+        .cv-container:focus { outline: 2px dashed #007bff; }
+
+        /* Format Teks CV */
+        h1 { font-size: 18pt; text-align: center; margin: 0 0 5px 0; font-weight: bold; text-transform: uppercase;}
+        .contact { text-align: center; font-size: 11pt; margin-bottom: 15px; }
+        h2 { font-size: 12pt; border-bottom: 1.5px solid #000; text-transform: uppercase; margin: 15px 0 5px 0; padding-bottom: 2px; }
+        p { font-size: 11pt; margin: 0 0 8px 0; text-align: justify; }
+        ul { padding-left: 20px; margin: 0 0 10px 0; }
+        li { font-size: 11pt; margin-bottom: 3px; text-align: justify;}
+        
+        .flex-between { display: flex; justify-content: space-between; }
+        .company { font-weight: bold; text-transform: uppercase; }
+        .role { font-weight: bold; }
+        .date { font-style: italic; }
+
+        /* Sembunyikan tombol saat di-print/PDF */
+        @media print {
+            body { background: white; padding: 0; }
+            .toolbar { display: none; }
+            .cv-container { box-shadow: none; width: 100%; padding: 0; margin: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="toolbar">
+        <button onclick="window.print()">🖨️ Simpan sebagai PDF</button>
+        <span class="hint">💡 Klik langsung pada teks di kertas putih untuk mengedit.</span>
+    </div>
+
+    <!-- Area yang bisa diedit (contenteditable) -->
+    <div class="cv-container" contenteditable="true" spellcheck="false">
+        
+        <h1>HERI RIYANTO</h1>
+        <div class="contact">heri.riyanto207@gmail.com • Bogor • 089650001021 • linkedin.com/in/heririyanto20</div>
+
+        <h2>INTRODUCTION</h2>
+        <p>Electrical Engineering graduate with a strong analytical foundation and a recent graduate of the intensive AWS re/Start program, gaining practical knowledge in cloud architecture and IT infrastructure. Experienced in coordinating end-to-end digital projects, managing operational data, and ensuring strict timeline adherence. A detail-oriented professional with strong communication skills and logical troubleshooting abilities, eager to leverage project management and infrastructure knowledge as a Project Coordinator.</p>
+
+        <h2>WORK EXPERIENCE</h2>
+        
+        <div class="flex-between">
+            <span class="company">INDEPENDENT DIGITAL LOCALIZATION PROJECT | REMOTE</span>
+            <span class="company">Bogor, Indonesia</span>
+        </div>
+        <div class="flex-between">
+            <span class="role">Digital Project Coordinator</span>
+            <span class="date">Apr 2026 – Present</span>
+        </div>
+        <ul>
+            <li>Managed an end-to-end digital content production cycle, overseeing sourcing, localization (translation), and final publishing for multiple digital titles to ensure alignment with project goals.</li>
+            <li>Established and maintained a consistent daily production schedule, successfully coordinating workflows to ensure high-quality content delivery within tight, self-imposed deadlines.</li>
+            <li>Performed comprehensive quality checks and standardization processes to ensure a professional user experience.</li>
+            <li>Analyzed content performance metrics and audience preference to select high-potential titles, effectively managing a library of 15+ active digital publications.</li>
+        </ul>
+
+        <div class="flex-between">
+            <span class="company">BB GIFT SHOP</span>
+            <span class="company">Bandung, Indonesia</span>
+        </div>
+        <div class="flex-between">
+            <span class="role">E-Commerce & Operations Coordinator</span>
+            <span class="date">Oct 2024 - Jul 2025</span>
+        </div>
+        <ul>
+            <li>Managed operational data and generated monthly performance reports utilizing Google Sheets to track inventory movement, capital costs, and sales margins.</li>
+            <li>Coordinated end-to-end product fulfillment, from handling packaging and logistics to collaborating with external vendors for product refinements.</li>
+            <li>Managed digital product catalogs across the company website and e-commerce platforms (including Grailed), handling product photography, visual editing, and occasional social media content creation.</li>
+        </ul>
+
+        <div class="flex-between">
+            <span class="company">ARTIFICIAL INTELLIGENCE CENTER INDONESIA</span>
+            <span class="company">Jakarta Indonesia</span>
+        </div>
+        <div class="flex-between">
+            <span class="role">Machine Learning Trainee</span>
+            <span class="date">Feb 2022 - Jul 2022</span>
+        </div>
+        <ul>
+            <li>Participated in a study program focusing on foundational AI concepts.</li>
+            <li>Collaborated within a capstone project team, specifically taking ownership of the Speech-to-Text module integration to support the final application.</li>
+            <li>Coordinated with team members to align individual task deliverables with the overall project timeline.</li>
+        </ul>
+
+        <h2>EDUCATION</h2>
+        
+        <div class="flex-between">
+            <span class="company">INDONESIA UNIVERSITY OF EDUCATION</span>
+            <span class="role">2019-2024</span>
+        </div>
+        <p>Major in Electrical Engineering, GPA 3.16<br>
+        Active in several activities, such as:</p>
+        <ul>
+            <li>Himpunan Mahasiswa Elektro – Member of Education Division (2021-2022)</li>
+        </ul>
+
+        <h2>COURSES & CERTIFICATIONS</h2>
+        <ul>
+            <li><strong>AWS re/Start Graduate (Cloud, Networking, Linux)</strong> – Amazon Web Services Training and Certification (Sep 2026)</li>
+            <li><strong>HCIA-Cloud Service Training</strong> – Digitalent Komdigi & Huawei (Oct 2025 - Dec 2025)</li>
+            <li>Cloud Computing (Fresh Graduate Academy) — Digital Talent Scholarship (2025)</li>
+            <li>Machine Learning Program – Artificial Intelligence Center Indonesia (2022)</li>
+            <li>Web Developer Program – Google Developer Student Clubs Universitas Indonesia (2022)</li>
+            <li>English Program – EPLC Kampung Inggris, Bandung (2024)</li>
+        </ul>
+
+    </div>
+</body>
+</html>
